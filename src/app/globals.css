@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #fbfafb; color: #111827; font-family: Arial, Helvetica, sans-serif; }
+button, input { font: inherit; }
+::selection { background: #cfe0ff; color: #091426; }
+@layer components {
+  .page-shell { @apply mx-auto w-full max-w-app px-4 sm:px-6 lg:px-8; }
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[0.16em] text-muted; }
+  .section-title { @apply text-3xl font-semibold tracking-tight text-ink sm:text-4xl; }
+  .card { @apply rounded-2xl border border-line bg-white shadow-soft; }
+  .nav-link { @apply text-sm font-semibold uppercase tracking-[0.12em] text-muted transition hover:text-navy; }
+  .nav-link-active { @apply text-navy; }
+  .button-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-navy px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue focus:ring-offset-2; }
+  .button-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-sm font-semibold text-ink transition hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue focus:ring-offset-2; }
+  .filter-chip { @apply rounded-full border border-line bg-white px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:border-blue hover:text-blue; }
+}
+.grid-dots { background-image: radial-gradient(rgba(37,99,235,.25) 1px,transparent 1px); background-size: 20px 20px; }
+.hero-orb { filter: blur(50px); animation: float 9s ease-in-out infinite; }
+.hero-orb-delayed { animation-delay: -4.5s; }
+@keyframes float { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(28px,-18px,0) scale(1.06); } }
